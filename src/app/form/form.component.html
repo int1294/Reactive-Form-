@@ -1,0 +1,46 @@
+<div>
+  <h1>Feb Grad 2023</h1>
+<form style="padding: 0px 50px;" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label for="first-name">First Name </label>
+  <input id="first-name" type="text" formControlName="firstName">
+  <br/>
+
+
+  <label for="last-name">Last Name </label>
+  <input id="last-name" type="text" formControlName="lastName">
+  <br/>
+
+
+  <label for="address">Address </label>
+  <input id="address" type="text" formControlName="address">
+<br/>
+
+  <label for="age">Age </label>
+  <input id="age" type="number" formControlName="age">
+  <br/>
+
+
+  <label for="pro-type">Type </label>
+  <select id="proType" formControlName="proType" name="proType">
+    <option style="margin:10px" value="student">Student</option>
+    <option value="professor">Professor</option>
+
+  </select>
+  <br/>
+
+
+  <p class= "warning" *ngIf="!profileForm.valid">
+    <i class='fas fa-exclamation-triangle' style='font-size:18px;color:red'></i>
+       Complete the form to enable button.
+  </p>
+  <p style='color:green' *ngIf="profileForm.valid">
+    <i style='font-size:18px;color:green' class="fas fa-check-circle	"></i>
+    Form valid
+  </p>
+
+
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+</form>
+
+</div>
